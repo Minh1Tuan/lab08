@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
+<?php
+$pageTitle = 'Login';
+include 'header.inc';
+?>
+    <h2>Login</h2>
+    <?php if (isset($_GET['error'])): ?>
+        <p style="color: red;">Invalid username or password. Please try again.</p>
+    <?php endif; ?>
     <form method="post" action="process.php">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
@@ -18,5 +17,4 @@
         <input type="hidden" name="token" value="105943126">
         <input type="submit" value="Login">
     </form>
-</body>
-</html>
+<?php include 'footer.inc'; ?>
